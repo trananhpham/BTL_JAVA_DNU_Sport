@@ -1,0 +1,12 @@
+package com.clup.model;
+
+public class Basketball extends Sport {
+
+    public Basketball(String id, String name, String desc, String coachId) {
+        super(id, name, desc, coachId);
+    }
+
+    public String getTrainingSchedule() {
+        return "Bóng rổ: T3/T6 19:00";
+    }
+}
