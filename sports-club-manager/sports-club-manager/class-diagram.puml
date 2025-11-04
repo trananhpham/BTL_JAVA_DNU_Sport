@@ -1,0 +1,43 @@
+
+@startuml
+abstract class Person { id: String; name: String; phone: String }
+class Member
+class Coach { sportIds: Set<String> }
+Person <|-- Member
+Person <|-- Coach
+
+abstract class Sport { id: String; name: String; description: String; coachId: String; getTrainingSchedule() }
+Sport <|-- Football
+Sport <|-- Basketball
+Sport <|-- Tennis
+Sport <|-- Badminton
+
+class Schedule { id; sportId; coachId; memberIds; date; time; duration; status }
+enum ScheduleStatus
+
+abstract class Competition { id; name; date; getType() }
+Competition <|-- League
+Competition <|-- Tournament
+
+class Result { competitionId; memberId; score; rank }
+class Achievement { id; memberId; title; points; competitionId; date }
+
+interface Persistable { +load(); +save() }
+interface Schedulable { +schedule(); +findConflicts() }
+
+class MemberRepository
+class CoachRepository
+class SportRepository
+class ScheduleRepository
+class CompetitionRepository
+class ResultRepository
+class AchievementRepository
+
+Persistable <|.. MemberRepository
+Persistable <|.. CoachRepository
+Persistable <|.. SportRepository
+Persistable <|.. ScheduleRepository
+Persistable <|.. CompetitionRepository
+Persistable <|.. ResultRepository
+Persistable <|.. AchievementRepository
+@enduml

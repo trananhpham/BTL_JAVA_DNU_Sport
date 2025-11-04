@@ -1,0 +1,1 @@
+package com.club.model; public class Football extends Sport { public Football(String id, String name, String desc, String coachId){ super(id,name,desc,coachId);} public String getTrainingSchedule(){ return "Bóng đá: T2/T5 18:00"; } }
