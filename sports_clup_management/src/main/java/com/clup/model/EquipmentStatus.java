@@ -1,7 +1,7 @@
 package com.clup.model;
 
-public class EquipmentStatus {
-AVAILABLE,      // Có sẵn
+public enum  EquipmentStatus {
+    AVAILABLE,      // Có sẵn
     IN_USE,         // Đang sử dụng
     MAINTENANCE,    // Đang bảo trì
     DAMAGED,        // Hư hỏng
