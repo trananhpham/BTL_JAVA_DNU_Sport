@@ -3,7 +3,7 @@ package com.clup.model;
 import java.time.LocalDate;
 import java.util.UUID;
 
-public class Competition {
+public abstract class Competition {
  protected String id;
     protected String name;
     protected LocalDate date;

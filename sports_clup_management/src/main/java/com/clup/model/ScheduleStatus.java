@@ -1,5 +1,7 @@
 package com.clup.model;
 
 public enum ScheduleStatus {
-    SCHEDULED, COMPLETED, CANCELLED
+    SCHEDULED, 
+    COMPLETED, 
+    CANCELLED
 }
