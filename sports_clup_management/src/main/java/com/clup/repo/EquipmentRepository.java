@@ -1,6 +1,9 @@
 package com.clup.repo;
 
+import com.clup.model.Equipment;
+import com.clup.model.EquipmentStatus;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class EquipmentRepository extends BaseCsvRepository<Equipment> {
 

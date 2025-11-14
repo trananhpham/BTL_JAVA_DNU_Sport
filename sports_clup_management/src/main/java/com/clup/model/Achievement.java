@@ -10,13 +10,15 @@ public class Achievement {
     private String competitionID;
     private LocalDate date;
 
-    public Achievement(String competitionID, LocalDate date, String id, String memberID, int points, String title) {
-        this.competitionID = competitionID;
-        this.date = date;
-        this.id = id == null ? java.util.UUID.randomUUID().toString() : id;
-        this.memberID = memberID;
-        this.points = points;
+    // Constructor khớp với cách dùng trong Repository và DataBootstrap:
+    // (id, memberId, title, points, competitionId, date)
+    public Achievement(String id, String memberId, String title, int points, String competitionId, LocalDate date) {
+        this.id = (id == null || id.isBlank()) ? java.util.UUID.randomUUID().toString() : id;
+        this.memberID = memberId;
         this.title = title;
+        this.points = points;
+        this.competitionID = competitionId;
+        this.date = date;
     }
 
     
@@ -25,9 +27,9 @@ public class Achievement {
         return id;
     }
 
-    public String getMemberID() {
-        return memberID;
-    }
+    // Giữ cả 2 getter để tương thích tên phương thức
+    public String getMemberID() { return memberID; }
+    public String getMemberId() { return memberID; }
 
     public String getTitle() {
         return title;
@@ -37,9 +39,8 @@ public class Achievement {
         return points;
     }
 
-    public String getCompetitionID() {
-        return competitionID;
-    }
+    public String getCompetitionID() { return competitionID; }
+    public String getCompetitionId() { return competitionID; }
 
     public LocalDate getDate() {
         return date;
